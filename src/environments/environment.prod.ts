@@ -10,7 +10,7 @@ export const environment = {
   production: true,
   hmr: false,
   version: env.npm_package_version,
-  serverUrl: 'https://api.chucknorris.io',
+  serverUrl: 'http://localhost:3000', // TODO: Change this variable to actual sever path.
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US', 'fr-FR']
 };

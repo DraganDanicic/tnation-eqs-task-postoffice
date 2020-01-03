@@ -1,0 +1,20 @@
+<form>
+  <div class="form-group form-inline">
+    Search: <input class="form-control ml-2" type="text" [formControl]="filter" />
+  </div>
+</form>
+
+<table *ngIf="!isLoading" class="table table-striped">
+  <thead>
+    <th>ID</th>
+    <th>Office</th>
+    <th>PLZ</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shipment of shipmentList">
+      <td>{{ shipment.id }}</td>
+      <td>{{ shipment.office.name }}</td>
+      <td>{{ shipment.office.PLZ }}</td>
+    </tr>
+  </tbody>
+</table>
