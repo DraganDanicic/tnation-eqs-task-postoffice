@@ -4,21 +4,21 @@ export enum WeightDesc {
   big = 'More than 5kg'
 }
 export interface Shipment {
-  id: String; // "065ecba4-ba31-4154-8bb2-b7ff1726ef14",
+  id: string; // "065ecba4-ba31-4154-8bb2-b7ff1726ef14",
   type: {
-    id: Number;
+    id: number;
     name: 'package' | 'letter'; //"package"
   };
-  origin: Boolean;
-  destination: Boolean;
-  delivered: Boolean;
+  origin: boolean;
+  destination: boolean;
+  delivered: boolean;
   weight: {
-    id: Number;
+    id: number;
     desc: WeightDesc;
   };
   office: {
-    id: Number; //"ec245151-cda1-466d-9286-1b574a0cc83f",
-    PLZ: Number; // 80686,
-    name: String;
+    id: number; //"ec245151-cda1-466d-9286-1b574a0cc83f",
+    PLZ: number; // 80686,
+    name: string;
   };
 }
