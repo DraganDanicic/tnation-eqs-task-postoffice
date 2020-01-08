@@ -14,7 +14,7 @@ import { ShellModule } from './shell/shell.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ShipmentListComponent } from './views/shipment-list/shipment-list.component';
+import { ShipmentModule } from './shipment/shipment.module';
 
 @NgModule({
   imports: [
@@ -28,6 +28,7 @@ import { ShipmentListComponent } from './views/shipment-list/shipment-list.compo
     SharedModule,
     ShellModule,
     HomeModule,
+    ShipmentModule,
     LoginModule,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],

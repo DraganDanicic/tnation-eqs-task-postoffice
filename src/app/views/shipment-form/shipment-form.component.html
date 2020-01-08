@@ -1,0 +1,86 @@
+<div class="container text-center">
+  <p class="h4 mb-4">New Shipment</p>
+  <!-- SHIPMENT TYPE -->
+  <div class="row ">
+    <div class="col-6 text-right">
+      <div ngbDropdown class="d-inline-block ">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Shipment type</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button
+            ngbDropdownItem
+            *ngFor="let shipmentType of shipmentTypeList"
+            (click)="$event.stopPropagation(); form.controls.shipmentType.setValue(shipmentType)"
+          >
+            {{ shipmentType.name }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 text-left">
+      <div class="d-inline-block">
+        <input ype="text" [formControl]="form.controls.shipmentType.controls.name" />
+      </div>
+    </div>
+  </div>
+  <!-- WEIGHT -->
+  <div class="row">
+    <div class="col-6 text-right text-left">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Weight</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button
+            ngbDropdownItem
+            *ngFor="let weight of weightDescList"
+            (click)="$event.stopPropagation(); form.controls.weightType.setValue(weight)"
+          >
+            {{ weight.desc }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 text-left">
+      <div class="d-inline-block">
+        <input type="text" [formControl]="form.controls.weightType.controls.desc" />
+      </div>
+    </div>
+  </div>
+  <!-- Origin, Destination, Delivered -->
+  <div class="row">
+    <div class="col">
+      <div class="btn-group btn-group-toggle">
+        <label class="btn-primary" ngbButtonLabel>
+          <input type="checkbox" ngbButton [formControl]="form.controls.origin" /> Origin
+        </label>
+        <label class="btn-primary" ngbButtonLabel>
+          <input type="checkbox" ngbButton [formControl]="form.controls.destination" /> Destination
+        </label>
+        <label class="btn-primary" ngbButtonLabel>
+          <input type="checkbox" ngbButton [formControl]="form.controls.delivered" /> Delivered
+        </label>
+      </div>
+    </div>
+  </div>
+  <!-- POST OFFICE LIST -->
+  <div class="row">
+    <div class="col-6 text-right">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Office</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button
+            ngbDropdownItem
+            *ngFor="let office of officeList"
+            (click)="$event.stopPropagation(); form.controls.office.setValue(office)"
+          >
+            {{ office.name }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 text-left">
+      <div class="d-inline-block">
+        <input ype="text" [formControl]="form.controls.office.controls.name" />
+        <input ype="text" [formControl]="form.controls.office.controls.PLZ" />
+      </div>
+    </div>
+  </div>
+</div>
